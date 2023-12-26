@@ -1,15 +1,16 @@
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-import Logo from "@/assets/Logo.png";
-import Link from "./Link";
-import { SelectedPage } from "@/shared/types";
-import useMediaQuery from "@/hooks/useMediaQuery";
 import { useState } from "react";
-import ActionButton from "../Buttons/ActionButton";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+import useMediaQuery from "@/hooks/useMediaQuery";
+
+import { SelectedPage } from "@/shared/types";
+import Link from "./Link";
+import ActionButton from "../buttons/ActionButton";
+import Logo from "@/assets/Logo.png";
 
 type Props = {
   selectedPage: SelectedPage;
-  setSelectedPage: (value: SelectedPage) => void;
   isTopOfPage: boolean;
+  setSelectedPage: (value: SelectedPage) => void;
 };
 
 const Navbar = ({ selectedPage, setSelectedPage, isTopOfPage }: Props) => {
