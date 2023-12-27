@@ -8,8 +8,8 @@ import ActionButton from "../Buttons/ActionButton";
 import Logo from "@/assets/Logo.png";
 
 type Props = {
-  selectedPage: SelectedPage;
   isTopOfPage: boolean;
+  selectedPage: SelectedPage;
   setSelectedPage: (value: SelectedPage) => void;
 };
 
@@ -17,7 +17,9 @@ const Navbar = ({ selectedPage, setSelectedPage, isTopOfPage }: Props) => {
   const flexBetween = "flex items-center justify-between";
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
-  const navbarBackground = isTopOfPage ? "" : "bg-primary-100 drop-shadow";
+  const navbarBackground = isTopOfPage
+    ? ""
+    : "bg-primary-100 drop-shadow bg-opacity-75";
 
   return (
     <nav>
