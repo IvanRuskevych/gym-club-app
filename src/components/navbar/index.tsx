@@ -4,7 +4,7 @@ import useMediaQuery from "@/hooks/useMediaQuery";
 
 import { SelectedPage } from "@/shared/types";
 import Link from "./Link";
-import ActionButton from "../buttons/ActionButton";
+import ActionButton from "../Buttons/ActionButton";
 import Logo from "@/assets/Logo.png";
 
 type Props = {
