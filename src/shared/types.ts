@@ -5,8 +5,15 @@ export enum SelectedPage {
   ContactUs = "contactus",
 }
 
-export type BenefitType = {
+export type TypeBenefit = {
   icon: JSX.Element;
   title: string;
   description: string;
+};
+
+export type TypeClass = {
+  name: string;
+  image: string;
+
+  description?: string;
 };
