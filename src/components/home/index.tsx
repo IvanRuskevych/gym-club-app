@@ -1,9 +1,8 @@
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { SelectedPage } from "@/shared/types";
 
-import HomePageText from "@/assets/HomePageText.png";
+import HomePageText from "@/assets/HomePageText1.png";
 import HomePageGraphic from "@/assets/HomePageGraphic.png";
-import BenefitsPageGraphic from "@/assets/BenefitsPageGraphic.png";
 import SponsorRedBull from "@/assets/SponsorRedBull.png";
 import SponsorForbes from "@/assets/SponsorForbes.png";
 import SponsorFortune from "@/assets/SponsorFortune.png";
@@ -17,12 +16,18 @@ type Props = { setSelectedPage: (value: SelectedPage) => void };
 const Home = ({ setSelectedPage }: Props) => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px");
   return (
-    <section id="home" className={`gap-16 bg-gray-20 py-10 md:h-full md:pb-0`}>
+    <section id="home" className={`bg-gray-20 gap-16 py-10 md:h-full md:pb-0`}>
       {/* IMAGE AND MAIN HEADER */}
       <motion.div
         className={`mx-auto  w-5/6 items-center justify-center md:flex md:h-5/6`}
         onViewportEnter={() => setSelectedPage(SelectedPage.Home)}
       >
+        {/* IMAGE */}
+        <div
+          className={`flex basis-2/5 justify-center md:z-10 md:mr-40 md:mt-10 md:justify-items-end`}
+        >
+          <img src={HomePageGraphic} alt="home-page-graphic" />
+        </div>
         {/* MAIN HEADER */}
         <div className={`z-10 mt-32 md:basis-3/5`}>
           {/* HEADINGS */}
@@ -33,14 +38,14 @@ const Home = ({ setSelectedPage }: Props) => {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.5 }}
             variants={{
-              hidden_hd: { opacity: 0, x: -50 },
+              hidden_hd: { opacity: 0, x: 50 },
               visible_vs: { opacity: 1, x: 0 },
             }}
           >
             {/* створив обгортку <div className={`relative`}> щоб використати relative/absolute */}
             <div className={`relative`}>
               <div
-                className={`before:absolute before:-left-20 before:-top-20 before:z-[-1] md:before:content-evolvetext`}
+                className={`before:absolute before:-left-20 before:top-[-60px] before:z-[-1] md:before:content-evolvetext`}
               >
                 {/* <h1 className={`text-[90px] font-bold uppercase `}>Gym Club</h1> */}
                 <img src={HomePageText} alt="home-page-text" />
@@ -62,7 +67,7 @@ const Home = ({ setSelectedPage }: Props) => {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ delay: 0.2, duration: 0.5 }}
             variants={{
-              hidden_hd: { opacity: 0, x: -50 },
+              hidden_hd: { opacity: 0, x: 50 },
               visible_vs: { opacity: 1, x: 0 },
             }}
           >
@@ -77,13 +82,6 @@ const Home = ({ setSelectedPage }: Props) => {
               Learn More
             </AnchorLink>
           </motion.div>
-        </div>
-
-        {/* IMAGE */}
-        <div
-          className={`flex basis-3/5 justify-center md:z-10 md:ml-40 md:mt-10 md:justify-items-end`}
-        >
-          <img src={HomePageGraphic} alt="home-page-graphic" />
         </div>
       </motion.div>
 

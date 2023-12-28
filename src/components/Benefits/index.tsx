@@ -1,4 +1,4 @@
-import { BenefitType, SelectedPage } from "@/shared/types";
+import { TypeBenefit, SelectedPage } from "@/shared/types";
 
 import {
   HomeModernIcon,
@@ -55,7 +55,7 @@ const Benefits = ({ setSelectedPage }: Props) => {
           //   },
           // }}
         >
-          {benefits.map((el: BenefitType) => (
+          {benefits.map((el: TypeBenefit) => (
             <Benefit
               key={el.title}
               icon={el.icon}
@@ -104,7 +104,7 @@ const Benefits = ({ setSelectedPage }: Props) => {
               initial="hidden_hd"
               whileInView="visible_vs"
               viewport={{ once: true, amount: 0.5 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
               variants={{
                 hidden_hd: { opacity: 0, x: 50 },
                 visible_vs: { opacity: 1, x: 0 },
@@ -127,13 +127,23 @@ const Benefits = ({ setSelectedPage }: Props) => {
             </motion.div>
 
             {/* BUTTON */}
-            <div className="relative mt-16">
+            <motion.div
+              className="relative mt-16"
+              initial="hidden_hd"
+              whileInView="visible_vs"
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              variants={{
+                hidden_hd: { opacity: 0, x: 50 },
+                visible_vs: { opacity: 1, x: 0 },
+              }}
+            >
               <div className="before:absolute before:-bottom-20 before:right-40 before:z-[-1] before:content-sparkles">
                 <ActionButton setSelectedPage={setSelectedPage}>
                   Join Now
                 </ActionButton>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </motion.div>
@@ -148,7 +158,7 @@ const container = {
   },
 };
 
-const benefits: Array<BenefitType> = [
+const benefits: Array<TypeBenefit> = [
   {
     icon: <HomeModernIcon className="h-6 w-6" />,
     title: "State of the Art Facilities",
