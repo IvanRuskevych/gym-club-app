@@ -17,13 +17,18 @@ const ContactUs = ({ setSelectedPage }: Props) => {
     register,
     trigger,
     formState: { errors },
+    reset,
   } = useForm();
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmit = async (event: any) => {
     const isValid = await trigger();
+
     if (!isValid) {
       event.preventDefault();
     }
+
+    reset();
   };
 
   return (
@@ -58,7 +63,7 @@ const ContactUs = ({ setSelectedPage }: Props) => {
         <div className="mt-10 flex w-3/5 gap-8">
           <motion.div className="w-4/5">
             <form
-              action="https://formsubmit.co/fullstack.dev.goit@gmail.com"
+              action="https://formsubmit.co/0b062080533e1c91b26566d218b4e0bc"
               method="POST"
               target="_blank"
               onSubmit={onSubmit}
@@ -90,10 +95,11 @@ const ContactUs = ({ setSelectedPage }: Props) => {
                 })}
               />
 
-              {errors.name && (
+              {errors.email && (
                 <p className="mt-1 text-primary-500">
-                  {errors.name.type === "required" && "This field is required."}
-                  {errors.name.type === "pattern" && "Invalid email address."}
+                  {errors.email.type === "required" &&
+                    "This field is required."}
+                  {errors.email.type === "pattern" && "Invalid email address."}
                 </p>
               )}
 
@@ -105,12 +111,13 @@ const ContactUs = ({ setSelectedPage }: Props) => {
                 rows={5}
                 className={inputStyles}
                 {...(register("message"), { required: true, maxLength: 2000 })}
-              ></textarea>
+              />
 
-              {errors.name && (
+              {errors.message && (
                 <p className="mt-1 text-primary-500">
-                  {errors.name.type === "required" && "This field is required."}
-                  {errors.name.type === "maxLength" &&
+                  {errors.message.type === "required" &&
+                    "This field is required."}
+                  {errors.message.type === "maxLength" &&
                     "Max length is 2000 char."}
                 </p>
               )}
@@ -137,7 +144,7 @@ const ContactUs = ({ setSelectedPage }: Props) => {
             }}
           >
             <img
-              className="min-w-[6rem] max-w-[6rem]"
+              className="mt-5 min-w-[6rem] max-w-[6rem]"
               alt="contact-us-page-graphic"
               src={ContactUsPageGraphic}
             />

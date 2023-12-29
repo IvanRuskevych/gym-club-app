@@ -1,17 +1,18 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import useMediaQuery from "@/hooks/useMediaQuery";
 
 import { SelectedPage } from "@/shared/types";
 import Link from "./Link";
 import ActionButton from "../Buttons/ActionButton";
-import Logo from "@/assets/Logo1.png";
+import Logo from "@/assets/Logo.png";
 
 type Props = {
   isTopOfPage: boolean;
   selectedPage: SelectedPage;
   setSelectedPage: (value: SelectedPage) => void;
 };
+
 
 const Navbar = ({ selectedPage, setSelectedPage, isTopOfPage }: Props) => {
   const flexBetween = "flex items-center justify-between";
@@ -20,7 +21,27 @@ const Navbar = ({ selectedPage, setSelectedPage, isTopOfPage }: Props) => {
   const navbarBackground = isTopOfPage
     ? ""
     : "bg-primary-100 drop-shadow bg-opacity-75";
+  
+  const handleCloseMenu = useCallback(
+    (event: KeyboardEvent) => {
+      if (event.key === "Escape" && isMenuToggled) {
+        setIsMenuToggled(false)
+      }
+    },
 
+    [isMenuToggled]
+  )
+
+  useEffect(() => {
+    if (isMenuToggled) {
+      document.addEventListener("keydown", handleCloseMenu)
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleCloseMenu)
+    }
+  },[handleCloseMenu, isMenuToggled])
+  
   return (
     <nav>
       <div

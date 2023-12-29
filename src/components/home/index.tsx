@@ -1,7 +1,7 @@
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { SelectedPage } from "@/shared/types";
 
-import HomePageText from "@/assets/HomePageText1.png";
+import GymeGymPage from "@/assets/GymeGymPage.png";
 import HomePageGraphic from "@/assets/HomePageGraphic.png";
 import SponsorRedBull from "@/assets/SponsorRedBull.png";
 import SponsorForbes from "@/assets/SponsorForbes.png";
@@ -48,7 +48,7 @@ const Home = ({ setSelectedPage }: Props) => {
                 className={`before:absolute before:-left-20 before:top-[-60px] before:z-[-1] md:before:content-evolvetext`}
               >
                 {/* <h1 className={`text-[90px] font-bold uppercase `}>Gym Club</h1> */}
-                <img src={HomePageText} alt="home-page-text" />
+                <img src={GymeGymPage} alt="home-page-text" />
               </div>
             </div>
             <p className={`mt-8 text-sm`}>
