@@ -1,6 +1,7 @@
-import { SelectedPage } from "@/shared/types";
+// import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import { SelectedPage } from "../../shared/types";
 
 type Props = {
   icon: JSX.Element;

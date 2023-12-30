@@ -1,9 +1,10 @@
-import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
-import HText from "../Common/HText";
 import { useForm } from "react-hook-form";
 
-import ContactUsPageGraphic from "@/assets/ContactUsPageGraphic.png";
+import { SelectedPage } from "../../shared/types";
+import HText from "../Common/HText";
+
+import ContactUsPageGraphic from "../../assets/ContactUsPageGraphic.png";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;

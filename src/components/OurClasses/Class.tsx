@@ -3,7 +3,9 @@
 //   image: string;
 //   description?: string;
 // };
-import { TypeClass } from "@/shared/types";
+
+
+import { TypeClass } from "../../shared/types";
 
 const Class = ({ name, image, description }: TypeClass) => {
   const overlayStyles = `absolute z-30 flex

@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 
 import Navbar from "./components/Navbar";
 
-import { SelectedPage } from "@/shared/types";
 import Home from "./components/Home";
 import Benefits from "./components/Benefits";
 import OurClasses from "./components/OurClasses";
 import ContactUs from "./components/ContactUs";
 import Footer from "./components/Footer";
+import { SelectedPage } from "./shared/types";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(

@@ -1,12 +1,12 @@
-import { SelectedPage, TypeClass } from "@/shared/types";
 import { motion } from "framer-motion";
 import Class from "./Class";
 
-import image1 from "@/assets/image-01.png";
-import image2 from "@/assets/image-02.png";
-import image3 from "@/assets/image-03.png";
+import image1 from "../../assets/image-01.png";
+import image2 from "../../assets/image-02.png";
+import image3 from "../../assets/image-03.png";
 
 import HText from "../Common/HText";
+import { SelectedPage, TypeClass } from "../../shared/types";
 
 const classes: Array<TypeClass> = [
   {

@@ -1,15 +1,18 @@
-import { TypeBenefit, SelectedPage } from "@/shared/types";
-
 import {
   HomeModernIcon,
   UserGroupIcon,
   AcademicCapIcon,
 } from "@heroicons/react/24/solid";
+
 import { motion } from "framer-motion";
-import HText from "../Common/HText";
+
+import { SelectedPage, TypeBenefit } from "../../shared/types";
+
 import Benefit from "./Benefit";
+import HText from "../Common/HText";
 import ActionButton from "../Buttons/ActionButton";
-import BenefitsPageGraphic from "@/assets/BenefitsPageGraphic.png";
+
+import BenefitsPageGraphic from "../../assets/BenefitsPageGraphic.png";
 
 type Props = { setSelectedPage: (value: SelectedPage) => void };
 
