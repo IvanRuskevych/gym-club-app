@@ -1,15 +1,14 @@
-import useMediaQuery from "@/hooks/useMediaQuery";
-import { SelectedPage } from "@/shared/types";
-
-import GymeGymPage from "@/assets/GymeGymPage.png";
-import HomePageGraphic from "@/assets/HomePageGraphic.png";
-import SponsorRedBull from "@/assets/SponsorRedBull.png";
-import SponsorForbes from "@/assets/SponsorForbes.png";
-import SponsorFortune from "@/assets/SponsorFortune.png";
+import GymeGymPage from "../../assets/GymeGymPage.png";
+import HomePageGraphic from "../../assets/HomePageGraphic.png";
+import SponsorRedBull from "../../assets/SponsorRedBull.png";
+import SponsorForbes from "../../assets/SponsorForbes.png";
+import SponsorFortune from "../../assets/SponsorFortune.png";
 
 import ActionButton from "../Buttons/ActionButton";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { motion } from "framer-motion";
+import { SelectedPage } from "../../shared/types";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 type Props = { setSelectedPage: (value: SelectedPage) => void };
 
