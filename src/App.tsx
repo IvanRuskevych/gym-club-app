@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-import Navbar from "./components/Navbar";
+import Navbar from "./components/navbar";
 
-import Home from "./components/Home";
+import Home from "./components/home";
 import Benefits from "./components/Benefits";
 import OurClasses from "./components/OurClasses";
 import ContactUs from "./components/ContactUs";
